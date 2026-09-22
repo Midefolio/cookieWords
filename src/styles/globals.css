@@ -1272,7 +1272,303 @@ button.crumbChip:active {
 }
 
 @media (max-width: 640px) {
-  .gameBody { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; }
-  .hintPanel { flex-direction: row; justify-content: center; gap: 10px; }
-  .hintFrame { width: clamp(48px, 14vw, 70px); }
+  html, body {
+    width: 100%;
+    min-width: 320px;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  .gameFrame {
+    width: calc(100vw - 18px);
+    min-height: calc(100dvh - 18px);
+    height: auto;
+    max-height: none;
+    padding: 9px;
+    border-radius: 20px;
+  }
+
+  .frameBolt.tl { top: 9px; left: 9px; }
+  .frameBolt.tr { top: 9px; right: 9px; }
+  .frameBolt.bl { bottom: 9px; left: 9px; }
+  .frameBolt.br { bottom: 9px; right: 9px; }
+
+  .innerPanel {
+    gap: 10px;
+    padding: 10px 8px 14px;
+    border-radius: 14px;
+  }
+
+  .topBar {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0.4rem;
+    height: auto;
+    min-height: 38px;
+  }
+
+  .topBar > .metaBadge,
+  .topBarActions > .metaBadge {
+    min-width: 0;
+    padding: 0.28rem 0.48rem;
+    font-size: 0.62rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .topBarActions {
+    justify-content: flex-end;
+    gap: 0.35rem;
+  }
+
+  .topBarActions .endGameBtn {
+    display: none;
+  }
+
+  .logo {
+    min-width: 0;
+    padding: 0.25rem 0.45rem;
+    font-size: clamp(0.72rem, 4.2vw, 1.05rem);
+    box-shadow:
+      0 0 0 2px var(--toon-ink),
+      0 3px 0 var(--toon-ink),
+      0 6px 8px rgba(0,0,0,0.4),
+      inset 0 2px 4px rgba(0,0,0,0.4);
+  }
+
+  .logo .letter {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .crumbRow {
+    width: 100%;
+    gap: 8px 6px;
+    padding: 2px 2px 0;
+  }
+
+  .crumbChip {
+    gap: 0.28rem;
+    padding: 0.22rem 0.48rem 0.22rem 0.22rem;
+    font-size: 0.58rem;
+    box-shadow:
+      0 0 0 2px var(--toon-ink),
+      0 3px 0 var(--toon-ink),
+      0 5px 7px rgba(0,0,0,0.35),
+      inset 0 1px 1px rgba(255,255,255,0.3);
+  }
+
+  .crumbIconWrap {
+    width: 22px;
+    height: 22px;
+  }
+
+  .gameBody {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 9px;
+    align-items: center;
+  }
+
+  .hintPanel {
+    height: auto;
+    min-height: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .hintFrame {
+    width: clamp(42px, 14vw, 62px);
+    box-shadow:
+      0 0 0 3px var(--toon-ink),
+      0 5px 0 var(--toon-ink),
+      0 10px 14px rgba(0,0,0,0.4);
+  }
+
+  .hintLabel {
+    font-size: 0.58rem;
+  }
+
+  .centerPlay {
+    height: auto;
+    gap: 12px;
+  }
+
+  .grid {
+    width: min(72vw, 310px);
+    height: auto;
+    aspect-ratio: 5 / 6;
+    gap: 5px;
+    padding: 2px;
+  }
+
+  .row {
+    gap: 5px;
+  }
+
+  .tile {
+    font-size: clamp(0.85rem, 7vw, 1.5rem);
+    border-radius: 14%;
+  }
+
+  .keyboard {
+    width: min(100%, 390px);
+    gap: 7px;
+    padding: 0 2px;
+  }
+
+  .keyRow {
+    gap: 4px;
+  }
+
+  .key {
+    height: clamp(38px, 10vw, 45px);
+    max-width: none;
+    border-radius: 8px;
+    font-size: clamp(0.62rem, 3.2vw, 0.82rem);
+    box-shadow:
+      0 0 0 2px var(--toon-ink),
+      0 4px 0 var(--toon-ink),
+      0 7px 8px rgba(0,0,0,0.3),
+      inset 0 1px 1px rgba(255,255,255,0.25),
+      inset 0 -4px 6px rgba(0,0,0,0.2);
+  }
+
+  .key.wide {
+    max-width: none;
+  }
+
+  .timerRow {
+    top: max(7px, env(safe-area-inset-top));
+  }
+
+  .timerChipBig {
+    padding: 0.22rem 0.55rem;
+    font-size: 0.68rem;
+  }
+
+  .lobbyPanel {
+    gap: 1rem;
+    padding: 24px 14px 20px;
+  }
+
+  .lobbyPanel .logo {
+    font-size: 1.15rem;
+  }
+
+  .lobbyStats {
+    width: 100%;
+    gap: 0.6rem;
+    justify-content: space-around;
+  }
+
+  .lobbyStats strong {
+    font-size: 1.2rem;
+  }
+
+  .lobbyStats span,
+  .modePickerTitle {
+    font-size: 0.65rem;
+  }
+
+  .modeOptions {
+    width: 100%;
+    gap: 0.55rem;
+  }
+
+  .modeOption {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .playNowBtn {
+    width: min(100%, 280px);
+  }
+
+  .lobbyActions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .celebrationModal,
+  .marketModal {
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: max(24px, env(safe-area-inset-top)) 12px max(24px, env(safe-area-inset-bottom));
+  }
+
+  .celebrationCard,
+  .marketPanel {
+    width: 100%;
+    max-height: none;
+  }
+
+  .celebrationCard {
+    padding: 112px 16px 22px;
+  }
+
+  .cookieGlowWrap {
+    top: -104px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .celebrationText {
+    font-size: 1.35rem;
+  }
+
+  .celebrationStats {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .gameFrame {
+    width: calc(100vw - 12px);
+    min-height: calc(100dvh - 12px);
+    padding: 6px;
+  }
+
+  .innerPanel {
+    padding-inline: 5px;
+  }
+
+  .topBar {
+    gap: 0.25rem;
+  }
+
+  .topBar > .metaBadge,
+  .topBarActions > .metaBadge {
+    padding-inline: 0.35rem;
+    font-size: 0.55rem;
+  }
+
+  .crumbLabel {
+    display: none;
+  }
+
+  .crumbChip {
+    padding: 0.22rem;
+  }
+
+  .grid {
+    width: min(70vw, 270px);
+  }
+
+  .keyboard {
+    gap: 5px;
+  }
+
+  .keyRow {
+    gap: 3px;
+  }
+
+  .key {
+    height: 36px;
+    font-size: 0.58rem;
+  }
 }

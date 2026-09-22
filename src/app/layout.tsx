@@ -3,8 +3,13 @@ import "@/styles/globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Cookie Words — Cookie Chain Community Edition",
+  title: "Cookie Words | Cookie Chain",
   description: "A wood-carved, cookie-themed word puzzle game for the Cookie Chain community.",
+  icons: {
+    icon: "/happycookie.png",
+    shortcut: "/happycookie.png",
+    apple: "/happycookie.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,4 +33,3 @@ export default function RootLayout({
     </html>
   );
 }
-
